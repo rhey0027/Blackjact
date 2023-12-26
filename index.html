@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>blackjack game</title>
+  </head>
+  <body>
+    <div class="gameContainer">
+      <!-- <h2 class="gameApp">GAME APPLICATION</h2> -->
+      <div class="pokerContainer">
+        <h1 id="poker-el"></h1>
+        <p id="message-el"></p>
+        <p id="card-el"></p>
+        <p id="sum-el"></p>
+        <div id="pokerButton" class="btnContainer">
+          <button id="start-el" onclick="startgame()"></button>
+          <button id="new-el" onclick="newcard()"></button>
+          <!-- <p id="player-name"></p> -->
+          <p id="player-el"></p>
+          <div class="resetContainer">
+            <p id="reset-el" onclick="handleReset()">RESTART</p>
+          </div>
+          <div class="input-container">
+            <input type="text" id="input-el" placeholder="Enter your name" />
+            <div class="submitContainer">
+              <p id="submit-el">SUBMIT &#x27A7;</p>
+              <button id="clear-el">CLEAR DATA</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gameMechanics">
+      <p class="gMech">Game Mechanics:</p>
+        <p class="mechList">
+          <span>A player name should input first before starting the game. </span><br>
+          <span>If no player name in the database, the game will not start.</span><br>
+          <span>Player should get '21' before credits run out.</span><br>
+          <span>You can type your name and press the submit button.</span><br>
+          <span>after pressing submit, input field will be disabled.</span><br>
+          <span>You can only type in the input field after pressing the clear data button.</span><br>
+      </div>
+      <footer class="footer-blackjact">
+        <p><span>Copyright &copy 2023</span> | RYU-Full Stack Developer</p>
+      </footer>
+    </div>
+    <script src="index.js"></script>
+    <!-- <script src="samples.js"></script> -->
+  </body>
+</html>
