@@ -135,6 +135,7 @@ const rendergame = () => {
   } if(credits === 0) {
     msgName = 'You are out of credits!'
     isAlive = false
+    disabled = document.getElementById('start-el').disabled = true
   }
   display.textContent = msgName
 }
