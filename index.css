@@ -157,27 +157,6 @@ button:hover {
 .input-container input:focus {
   outline: none;
 }
-
-/* .playerName input {
-  padding: 4px;
-  color: yellow;
-} */
-
-
-
-/* .input-element {
-  padding: 8px;
-  margin: 10px 0;
-  width: 170px;
-  color: rgb(9, 220, 248);
-}
-.input-element:focus {
-  outline: none;
-}
-.player-el input:focus {
-  outline: none;
-} */
-
 /* ------------------------------ *\
   #GAME INSTRUCTIONS
 \* ------------------------------ */
@@ -206,14 +185,12 @@ p.mechList  {
  footer {
    background-color: #05550b;
    padding: 5px;
-   width: 100%;
+   width: 100vw;
    margin-top: 15px;
    position: absolute;
    left: 0;
    right: 0;
    bottom: 0;
-   margin-left: auto;
-   margin-right: auto;
   }
   footer p {
   font-size: 10px;
