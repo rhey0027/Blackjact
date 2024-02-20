@@ -16,6 +16,7 @@ let credits = 120
 const division = '|'
 const winner = 'Congratulations!'
 
+
 //--------GET ELEMENT BY ID------------//
 
 const startEl = document.getElementById('start-el')
