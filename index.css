@@ -1,28 +1,47 @@
-
 /* ------------------------------ *\
-  #GLOBAL SETTINGS
+#GLOBAL SETTINGS
 \* ------------------------------ */
-body {
+
+* {
+  margin: 0; padding: 0;
   box-sizing: border-box;
+}
+body {
   background-image: url('./assets/image1.jpg');
   background-size: cover;
-  background-position: right;
+  background-position: top;
   background-repeat: no-repeat;
   color: white;
   font-family: 'tahoma';
   text-align: center;
-  width: 100%;
-  margin: 0; padding: 0;
+  width: 100vw;
   height: 100vh;
   overflow: hidden;
 }
 /* ------------------------------ *\
   #MAIN CONTAINER
 \* ------------------------------ */
-
-.gameContainer {
+/* .gameContainer {
   display: flex;
   flex-direction: column;
+} */
+.pokerContainer {
+  padding-top: 40px;
+}
+.btnContainer {
+  margin-top: 20px;
+}
+.player-element {
+  padding: 10px 5px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+.start-btn {
+  margin-bottom: 10px;
+}
+#message-el {
+  padding: 10px 0;
 }
 #poker-el  {
   font-family: 'Arial';
@@ -30,22 +49,23 @@ body {
   font-size: 18px;
 }
 #card-el {
-  color: #f130d8;
+  /* color: whitesmoke; */
+  color: #fdfdfd;
   font-weight: bold;
   padding: 4px;
   margin: 0;
 }
 #sum-el {
-  color: #fff;
+  color: #d3a9a9;
   font-weight: bold;
-  padding: 4px;
-  margin: 0;
+  padding: 14px;
 }
 
 /* ------------------------------ *\
 #BUTTONS
 \* ------------------------------ */
 button {
+  display: block;
   padding: 5px 30px;
   margin-top: 15px;
   display: block;
@@ -58,6 +78,7 @@ button {
   background-size: 200% 100%;
   background-position: right bottom;
   border-radius: 3px;
+  box-shadow: 1px 2px 8px rgb(0, 0, 0.2);
   transition: all 0.5s ease;
 }
 button:hover {
@@ -66,17 +87,19 @@ button:hover {
   font-weight: bold;
 }
 .resetContainer p {
+  display: block;
   color: #fff;
   background-color: #b33a0b;
   font-size: 12px;
   font-weight: bold;
-  width: 90px;
-  height: 13px;
+  width: 150px;
+  height: 25px;
   padding: 5px 30px;
   margin: auto;
   margin-bottom: 7px;
   border-radius: 4px;
   cursor: pointer;
+  box-shadow: 1px 2px 8px rgb(0, 0, 0.2);
   transition: 0.2s ease-in;
 }
 .resetContainer p:hover {
@@ -88,19 +111,19 @@ button:hover {
   background-color: #ff0000;
   font-size: 12px;
   font-weight: bold;
-  width: 90px;
-  height: 15px;
+  width: 150px;
+  height: 25px;
   padding: 5px 30px;
   margin: auto;
-  margin-bottom: 7px;
+  margin-bottom: 17px;
   border-radius: 4px;
   cursor: pointer;
+  box-shadow: 1px 2px 8px rgb(0, 0, 0.2);
   transition: 0.2s ease-in;
 }
 .submitContainer p:hover {
   background-color: #0b3ee6;
 }
-
 /* ------------------------------ *\
   #MESSAGES CONTENT
 \* ------------------------------ */
@@ -113,16 +136,17 @@ button:hover {
 /* ------------------------------ *\
   #PLAYER INFO
 \* ------------------------------ */
-
 #player-el {
-  color: #fff;
+  color: #ebfc07;
+  font-weight: bold;
 }
-
+ 
 /* ------------------------------ *\
   #INPUT FIELDS
 \* ------------------------------ */
 .playerName input {
-  padding: 4px
+  padding: 4px;
+  color: yellow;
 }
 .player-el input:focus {
   outline: none;
@@ -130,12 +154,11 @@ button:hover {
 #input-el {
   padding: 4px;
   width: 140px;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 #input-el:focus {
   outline: none;
 }
-
 /* ------------------------------ *\
   #GAME INSTRUCTIONS
 \* ------------------------------ */
@@ -182,11 +205,9 @@ footer span {
   color: #ffff00;
   opacity: 70%;
 }
-
 /* ------------------------------ *\
   #RESPONSIVENESS
 \* ------------------------------ */
-
 @media(max-width: 550px) {
   .gameContainer {
     width: 100%;

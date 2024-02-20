@@ -1,5 +1,4 @@
-//PLAY POKER START HERE
-// creating variable
+// -------------CREATING VARIABLES------------//
 let hasBlackJack = false
 let isAlive = false
 let disabled = false
@@ -17,7 +16,7 @@ let credits = 120
 const division = '|'
 const winner = 'Congratulations!'
 
-//getting the id
+//--------GET ELEMENT BY ID------------//
 
 const startEl = document.getElementById('start-el')
 const newEl = document.getElementById('new-el')
@@ -32,7 +31,9 @@ const submitEl = document.getElementById('submit-el')
 const pokerEl = document.getElementById('poker-el')
 
 const clearEl = document.getElementById('clear-el')
-//displaying the text
+
+//--------DISPLAYING TEXT IN DOM-------------//
+
 pokerEl.textContent = `${gameName}`
 messageEl.textContent = `${msgName}`
 cardEl.textContent = `${cardName}`
@@ -40,15 +41,19 @@ startEl.textContent = `${btnStart}`
 newEl.textContent = `${btnNew}`
 displaySum.textContent = `${sumName}`
 
+// -------CALLING LOCAL STORAGE--------------//
 const playerData = JSON.parse(localStorage.getItem('playerName'))
 
-//blinker condition
-  const blink = document.getElementById('message-el')
+// -----------BLINKER----------//
+
+const blink = document.getElementById('message-el')
   setInterval(function() {
     blink.style.color = 'yellow'
     blink.style.opacity = (blink.style.opacity == 0 ? 1 : 0)
     }, 500)
-//conditional or logic
+
+//----------FUNCTION DECLARATION-----------//
+
 if(playerData) {
     playerName = playerData
     playerEl.textContent = `Player: ${playerName} ${division}
@@ -60,7 +65,8 @@ if(playerData) {
     disabled = document.getElementById('start-el').disabled = false
     disabled = document.getElementById('new-el').disabled =  false
 }
-//submit form
+//------------SUBMIT FORM----------------//
+
 submitEl.addEventListener('click', function(){
   if(!inputEl.value) {
     disabled = document.getElementById('submit-el')
@@ -71,8 +77,12 @@ submitEl.addEventListener('click', function(){
     location.reload()
   }
   })
+
+  // GETTING RANDOM NUMBER WITH MATH.FLOOR-------------//
+
   const getRandomCard = () => {
-    let randomNumber = (Math.floor( Math.random()* 13 ) + 1)
+    let randomNumber = (Math.floor(Math.random()* 13 ) + 1)
+    console.log(randomNumber)
     if(randomNumber > 10) {
       return 10
     } else if(randomNumber === 1) {
@@ -81,7 +91,10 @@ submitEl.addEventListener('click', function(){
       return randomNumber
     }
   }
-const startgame = () => {
+
+// ---------STARTING GAME FUNCTION-----------//
+
+  const startgame = () => {
   isAlive = true
   let fCard = getRandomCard()
   let sCard = getRandomCard()
@@ -91,6 +104,7 @@ const startgame = () => {
 }
 const rendergame = () => {
   cardEl.textContent = `${cardName}`
+  // using for loop to cycle to different cards//
   for(let i = 0; i < cards.length; i++) {
     cardEl.textContent += cards[i] + '-'
 }
@@ -98,8 +112,9 @@ const rendergame = () => {
   if(sum < 21 || sum == 20) {
     msgName = 'Do you want to draw another card!'
 } else if (sum === 21 && credits > 40 ) {
-    msgName = "You won! You got blackjact!"
+    msgName = "You won! Additional credits will be added!"
     cardEl.textContent = `${winner} ${playerName}`
+
     playerEl.textContent = `Player: ${playerName}
     ${division} Credits: ${credits += 40}`
     pokerEl.textContent = '40 was added to your credits!'
@@ -113,7 +128,7 @@ const rendergame = () => {
       hasBlackJack = false
     display.textContent = message
 } else if (sum === 21 && credits < 50) {
-    msgName = "You won! You got blackjact!"
+    msgName = "You won! Additional credits will be added!"
     cardEl.textContent = `${winner} ${playerName}`
     playerEl.textContent = `Player: ${playerName} 
     ${division} Credits: ${credits += 100}`
@@ -140,6 +155,8 @@ const rendergame = () => {
   display.textContent = msgName
 }
 
+// PLAYER CREDITS LOGIC----------------//
+
 const playerCredits = () => {
   if(credits === 0){
     message = 'You are out of credits!'
@@ -149,6 +166,9 @@ const playerCredits = () => {
     disabled = document.getElementById('new-el').disabled = true
   }
 }
+
+//------------- NEW CARD FUNCTION------------//
+
 const newcard = () => {
   if(isAlive === true && hasBlackJack === false) {
     let card = getRandomCard()
@@ -157,11 +177,12 @@ const newcard = () => {
     rendergame()
   } 
 }
-
 if(playerName.length > 0) {
   disabled = document.getElementById('input-el').disabled = true 
   disabled = document.getElementById('submit-el').disabled = true   
 }
+
+// ---------RESET FUNCTION--------------//
 const handleReset = () => {
   location.reload()
   console.log('Game restarted')
@@ -173,7 +194,7 @@ clearEl.addEventListener('click', function() {
   ('input-el').disabled = false
   location.reload()
 })
-
+// --------------- END----------------//
 
 
 

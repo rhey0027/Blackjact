@@ -8,17 +8,15 @@
   </head>
   <body>
     <div class="gameContainer">
-      <!-- <h2 class="gameApp">GAME APPLICATION</h2> -->
       <div class="pokerContainer">
         <h1 id="poker-el"></h1>
         <p id="message-el"></p>
         <p id="card-el"></p>
         <p id="sum-el"></p>
         <div id="pokerButton" class="btnContainer">
-          <button id="start-el" onclick="startgame()"></button>
+          <button id="start-el"class='start-btn' onclick="startgame()"></button>
           <button id="new-el" onclick="newcard()"></button>
-          <!-- <p id="player-name"></p> -->
-          <p id="player-el"></p>
+          <p id="player-el" class="player-element"></p>
           <div class="resetContainer">
             <p id="reset-el" onclick="handleReset()">RESTART</p>
           </div>
@@ -31,6 +29,7 @@
           </div>
         </div>
       </div>
+      <!-- GAME MECHANICS -->
       <div class="gameMechanics">
       <p class="gMech">Game Mechanics:</p>
         <p class="mechList">
@@ -46,6 +45,5 @@
       </footer>
     </div>
     <script src="index.js"></script>
-    <!-- <script src="samples.js"></script> -->
   </body>
 </html>
